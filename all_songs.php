@@ -3,14 +3,8 @@
     require("response.php");
     require('songmodel.php');
 
-    $id = $_POST['id'];
-    if (strlen($id) <= 0) {
-        echo json_encode(new Response(false, "Bạn chưa truyền id", []));
-        return;
-    }
 
-
-    $query = "CALL get_song_proc('$id');";
+    $query = "CALL get_all_songs_proc();";
 
     $data = mysqli_query($con, $query);
     $array = [];
@@ -23,5 +17,5 @@
             $row['link']
         ));
     }
-    echo json_encode(new Response(true, null, $array[0]));
+    echo json_encode(new Response(true, null, $array));
 ?>
