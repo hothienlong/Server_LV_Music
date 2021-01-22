@@ -7,6 +7,7 @@
     $query = "CALL get_all_songs_proc();";
 
     $data = mysqli_query($con, $query);
+    // echo json_encode($data);
     $array = [];
 
     while ($row = mysqli_fetch_assoc($data)) {
