@@ -39,7 +39,7 @@
             $songRow['song_id'],
             $songRow['name'],
             $songRow['image'],
-            $songRow['link'],
+            $songRow['song_link'],
             $arraySingerNames
         ));
     }
@@ -48,11 +48,11 @@
 
     
     class SongItem{
-        function __construct($id, $name, $image, $link, $lst_singer_names){
+        function __construct($id, $name, $image, $song_link, $lst_singer_names){
             $this->id = $id;
             $this->name = $name;
             $this->image = $image;
-            $this->link = $link;
+            $this->song_link = $song_link;
             $this->lst_singer_names = $lst_singer_names;
         }
     }

@@ -20,7 +20,9 @@
             $row['song_id'],
             $row['name'],
             $row['image'],
-            $row['link']
+            $row['song_link'],
+            $row['mv_link'],
+            $row['lyric'],
         ));
     }
     echo json_encode(new Response(true, null, $array[0]));
