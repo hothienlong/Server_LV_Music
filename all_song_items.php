@@ -20,6 +20,7 @@
 
     while ($songRow = mysqli_fetch_assoc($data1)) {
 
+        // php sau khi thực hiện 1 query procedure phải có câu lệnh next_result
         $con->next_result();
 
         $song_id = $songRow['song_id'];
