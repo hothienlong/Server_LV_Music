@@ -3,6 +3,7 @@
     require("response.php");
     require('songmodel.php');
     require('singermodel.php');
+    require('songitemmodel.php');
 
     $cate_id = $_POST['cate_id'];
     $query1 = "CALL get_category_songs_proc('$cate_id');";
@@ -31,19 +32,13 @@
             $songRow['song_id'],
             $songRow['name'],
             $songRow['image'],
+            $songRow['song_link'],
+            $songRow['mv_link'],
+            $songRow['lyric'],
             $arraySingerNames
         ));
     }
 
     echo json_encode(new Response(true, null, $array));
 
-    
-    class SongItem{
-        function __construct($id, $name, $image, $lst_singer_names){
-            $this->id = $id;
-            $this->name = $name;
-            $this->image = $image;
-            $this->lst_singer_names = $lst_singer_names;
-        }
-    }
 ?>

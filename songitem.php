@@ -5,15 +5,8 @@
     require('singermodel.php');
     require('songitemmodel.php');
 
-    // $song_id = 1;
-    // $query2 = "CALL get_all_singers_of_song_proc('$song_id');";
-    // $data2 = mysqli_query($con, $query2);
-    // echo json_encode($data2);
-
-    // $con->next_result();
-
-
-    $query1 = "CALL get_all_songs_proc();";
+    $song_id = $_POST['song_id'];
+    $query1 = "CALL get_song_proc('$song_id');";
     $data1 = mysqli_query($con, $query1);
     // echo json_encode($data1);
 
@@ -47,7 +40,8 @@
         ));
     }
 
-    echo json_encode(new Response(true, null, $array));
+    echo json_encode(new Response(true, null, $array[0]));
 
+    
 
 ?>
